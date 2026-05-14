@@ -1,0 +1,1436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Jamie Min — Portfolio</title>
+<meta name="description" content="Jamie Min — Bilingual Digital Marketer. M.S. Digital Marketing & Analytics, Cal Poly Pomona." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#fafaf6;
+    --ink:#171717;
+    --ink-soft:#3a3025;
+    --ink-mute:#7a6a52;
+    --rule:rgba(0,0,0,.10);
+    --accent-warm:#c87b56;
+    --accent-deep:#a05a3c;
+    --accent-teal:#2e5b5b;
+    --accent-plum:#7a4a6a;
+    --accent-rose:#c47a85;
+    --gold:#b89855;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.55;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:
+      radial-gradient(ellipse at 18% 12%, rgba(255,240,210,.30), transparent 55%),
+      radial-gradient(ellipse at 88% 88%, rgba(200,220,220,.22), transparent 55%);
+    pointer-events:none;z-index:0;
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;
+    background-image:radial-gradient(rgba(0,0,0,.022) 1px, transparent 1px);
+    background-size:3px 3px;
+    pointer-events:none;z-index:1;mix-blend-mode:multiply;opacity:.5;
+  }
+  #root{position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  img{display:block;max-width:100%}
+
+  /* ------------------------------ NAV ------------------------------------ */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:22px 38px;
+    background:linear-gradient(to bottom, rgba(250,250,246,.92), rgba(250,250,246,0));
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+  }
+  .nav-brand{
+    font-family:'Inter',sans-serif;font-weight:700;font-size:14px;
+    letter-spacing:.34em;text-transform:uppercase;color:var(--ink);
+  }
+  .nav-links{display:flex;gap:44px;align-items:center;justify-self:center}
+  .nav-link{
+    font-family:'Inter',sans-serif;
+    font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--ink);font-weight:500;
+    opacity:.62;transition:opacity .2s ease, color .2s ease;
+    position:relative;padding:6px 0;
+  }
+  .nav-link:hover{opacity:1}
+  .nav-link.active{opacity:1;color:var(--accent-warm)}
+  .nav-link.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;
+    background:var(--accent-warm);
+  }
+  .nav-right{justify-self:end;display:flex;gap:16px;align-items:center}
+  .nav-mark{
+    font-family:'Caveat',cursive;font-weight:600;font-size:18px;
+    color:var(--accent-warm);transform:rotate(-2deg);
+  }
+
+  /* ------------------------------ HERO ----------------------------------- */
+  .hero{
+    position:relative;min-height:100vh;width:100%;overflow:hidden;
+  }
+  .hero-stage{
+    position:relative;width:100%;height:100vh;min-height:680px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-title-wrap{
+    position:relative;z-index:10;text-align:center;pointer-events:none;
+    padding:0 24px;
+  }
+  .hero-title{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-weight:200;
+    font-size:clamp(60px, 10vw, 156px);
+    line-height:.96;
+    letter-spacing:.04em;
+    color:var(--ink);
+  }
+  .hero-title .first{font-style:normal;font-weight:200}
+  .hero-title .last{font-style:italic;font-weight:300;color:var(--ink);margin-left:.16em}
+  .hero-sub{
+    display:block;
+    margin-top:34px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;font-weight:400;
+    font-size:clamp(15px,1.45vw,20px);
+    letter-spacing:.12em;color:var(--ink-soft);
+    max-width:760px;margin-left:auto;margin-right:auto;
+  }
+
+  /* --------------------- FLOATING SESSION OBJECTS ------------------------ */
+  .fc{
+    position:absolute;
+    cursor:pointer;
+    will-change:transform;
+    user-select:none;
+    background:transparent;
+    text-align:center;
+    width:150px;
+    z-index:5;
+  }
+  /* corner positions — CSS-driven, NOT JS-driven */
+  .fc.pos-tl{ top: 14%;    left: 10%; }
+  .fc.pos-tr{ top: 14%;    right: 10%; }
+  .fc.pos-bl{ bottom: 16%; left: 11%; }
+  .fc.pos-br{ bottom: 16%; right: 11%; }
+
+  .fc-inner{
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+    transform-origin:center center;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .fc:hover .fc-inner{
+    transform:translateY(-10px) scale(1.06);
+    filter:drop-shadow(0 18px 24px rgba(0,0,0,.14));
+  }
+  .fc-illu{
+    width:120px;height:120px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fc-illu svg{
+    width:100%;height:100%;
+    filter:drop-shadow(0 8px 12px rgba(0,0,0,.10));
+  }
+  .fc-label{
+    margin-top:18px;
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--ink);font-weight:500;
+    opacity:.78;transition:opacity .25s ease, color .25s ease;
+  }
+  .fc:hover .fc-label{opacity:1;color:var(--accent-warm)}
+
+  /* ---------------------------- SUB PAGES -------------------------------- */
+  .page{
+    position:relative;z-index:2;
+    padding:140px 8vw 120px;
+    max-width:1480px;margin:0 auto;
+  }
+  .page-header{margin-bottom:70px}
+  .page-eyebrow{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--ink-mute);margin-bottom:18px;
+    display:inline-flex;align-items:center;gap:14px;
+  }
+  .page-eyebrow .line{width:30px;height:1px;background:var(--ink-mute);opacity:.6}
+  .page-title{
+    font-family:'Fraunces',serif;font-weight:300;
+    font-size:clamp(52px,8.6vw,116px);line-height:.98;letter-spacing:-.01em;
+    color:var(--ink);
+  }
+  .page-title em{font-style:italic;font-weight:400}
+  .page-title em.warm{color:var(--accent-warm)}
+  .page-title em.teal{color:var(--accent-teal)}
+  .page-title em.plum{color:var(--accent-plum)}
+  .page-title em.rose{color:var(--accent-rose)}
+  .page-lede{
+    margin-top:32px;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:clamp(19px,2vw,25px);line-height:1.5;color:var(--ink-soft);
+    max-width:760px;
+  }
+  .back-link{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--ink-mute);
+    margin-bottom:48px;transition:gap .2s ease, color .2s ease;
+  }
+  .back-link:hover{gap:14px;color:var(--ink)}
+
+  /* About page */
+  .about-grid{
+    display:grid;grid-template-columns:minmax(280px, 360px) 1fr;
+    gap:60px;align-items:start;margin-bottom:90px;
+  }
+  .portrait{position:relative}
+  .portrait-frame{
+    position:relative;
+    background:#fefcf6;padding:14px 14px 56px;
+    border-radius:3px;
+    box-shadow:0 8px 26px rgba(80,60,40,.18), 0 2px 6px rgba(80,60,40,.1);
+    transform:rotate(-1.5deg);
+  }
+  .portrait-frame::before{
+    content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    width:80px;height:22px;background:rgba(210,190,150,.55);
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  .portrait-img{
+    width:100%;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
+    background:#222;
+    position:relative;display:flex;align-items:flex-end;justify-content:center;
+  }
+  .portrait-img img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    filter:saturate(1.05) contrast(1.02);
+  }
+  .portrait-caption{
+    position:absolute;bottom:18px;left:0;right:0;text-align:center;
+    font-family:'Caveat',cursive;font-size:18px;color:var(--ink-soft);
+  }
+  .portrait-stamp{
+    position:absolute;top:-18px;right:-18px;z-index:3;
+    width:88px;height:88px;border-radius:50%;
+    background:var(--accent-teal);color:#fefcf6;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;font-family:'Fraunces',serif;
+    box-shadow:0 4px 14px rgba(46,91,91,.4), inset 0 0 0 2px rgba(255,255,255,.25);
+    transform:rotate(8deg);
+  }
+  .portrait-stamp .stamp-top{
+    font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.22em;
+    text-transform:uppercase;opacity:.85;
+  }
+  .portrait-stamp .stamp-big{font-size:24px;font-style:italic;font-weight:400;line-height:1;margin:2px 0}
+  .portrait-stamp .stamp-bot{
+    font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.18em;
+    text-transform:uppercase;opacity:.85;
+  }
+
+  .about-body h3{
+    font-family:'Fraunces',serif;font-weight:400;font-size:28px;
+    margin-bottom:22px;display:flex;align-items:center;gap:14px;letter-spacing:-.005em;
+  }
+  .about-body h3 .h-num{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;
+    color:var(--accent-warm);font-weight:700;
+  }
+  .about-body h3 .h-text{
+    font-style:italic;font-weight:400;color:var(--ink);
+  }
+  .about-body h3 .h-text .em{color:var(--accent-warm);font-weight:500}
+  .about-body h3 .h-line{flex:1;height:1px;background:rgba(0,0,0,.12)}
+  .about-summary{
+    font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.65;
+    color:var(--ink-soft);margin-bottom:18px;
+  }
+  .about-summary .accent{color:var(--accent-warm);font-style:italic;font-weight:500}
+  .about-summary strong{color:var(--ink);font-weight:600;font-style:normal}
+  .about-section{margin-bottom:58px}
+
+  .skills-grid{
+    display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  }
+  .skill-block{
+    background:rgba(255,253,247,.6);
+    border:1px solid rgba(0,0,0,.06);border-radius:12px;
+    padding:22px;position:relative;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .skill-block:hover{transform:translateY(-3px);border-color:rgba(200,123,86,.35)}
+  .skill-block .sb-cat{
+    font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--accent-warm);font-weight:700;margin-bottom:8px;
+  }
+  .skill-block h4{
+    font-family:'Fraunces',serif;font-weight:400;font-size:20px;
+    margin-bottom:14px;line-height:1.15;
+  }
+  .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+  .skill-tag{
+    font-family:'Inter',sans-serif;font-size:11.5px;
+    padding:5px 10px;border-radius:99px;
+    background:rgba(0,0,0,.04);color:var(--ink-soft);
+    border:1px solid rgba(0,0,0,.05);
+  }
+  .skill-tag.hot{
+    background:rgba(200,123,86,.12);color:var(--accent-deep);
+    border-color:rgba(200,123,86,.25);font-weight:500;
+  }
+
+  .education-list{display:flex;flex-direction:column;gap:24px}
+  .edu-item{
+    display:grid;grid-template-columns:180px 1fr auto;gap:24px;align-items:baseline;
+    padding-bottom:24px;border-bottom:1px solid rgba(0,0,0,.08);
+  }
+  .edu-item:last-child{border-bottom:none}
+  .edu-date{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;
+    color:var(--accent-warm);text-transform:uppercase;font-weight:700;
+  }
+  .edu-main h4{
+    font-family:'Fraunces',serif;font-weight:500;font-size:22px;line-height:1.2;
+    margin-bottom:4px;
+  }
+  .edu-main .edu-degree{
+    font-style:italic;color:var(--ink-soft);font-family:'Cormorant Garamond',serif;font-size:18px;
+  }
+  .edu-main .edu-extra{
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;
+    color:var(--ink-mute);text-transform:uppercase;margin-top:6px;
+  }
+  .edu-gpa{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:30px;color:var(--accent-teal);
+  }
+
+  /* Experience timeline */
+  .timeline{position:relative;padding-left:48px}
+  .timeline::before{
+    content:"";position:absolute;left:12px;top:8px;bottom:8px;width:1.5px;
+    background:linear-gradient(to bottom,
+      var(--accent-warm) 0%, var(--accent-warm) 70%,
+      rgba(200,123,86,.2) 100%);
+  }
+  .timeline-item{position:relative;padding-bottom:64px}
+  .timeline-item:last-child{padding-bottom:0}
+  .timeline-item::before{
+    content:"";position:absolute;left:-43px;top:10px;width:17px;height:17px;
+    border-radius:50%;background:var(--paper);border:2.5px solid var(--accent-warm);
+    z-index:2;box-shadow:0 0 0 5px rgba(200,123,86,.08);
+  }
+  .timeline-item.leadership::before{
+    border-color:var(--accent-teal);box-shadow:0 0 0 5px rgba(46,91,91,.1);
+  }
+  .ti-date{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;
+    color:var(--accent-warm);text-transform:uppercase;font-weight:700;margin-bottom:8px;
+  }
+  .timeline-item.leadership .ti-date{color:var(--accent-teal)}
+  .ti-role{
+    font-family:'Fraunces',serif;font-weight:500;font-size:32px;line-height:1.1;
+    margin-bottom:4px;letter-spacing:-.01em;
+  }
+  .ti-company{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+    font-size:19px;color:var(--ink-soft);margin-bottom:6px;
+  }
+  .ti-meta{
+    font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2em;
+    color:var(--ink-mute);text-transform:uppercase;margin-bottom:20px;
+  }
+  .ti-bullets{list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;max-width:780px}
+  .ti-bullets li{
+    position:relative;padding-left:22px;font-size:15px;line-height:1.65;color:var(--ink-soft);
+  }
+  .ti-bullets li::before{
+    content:"";position:absolute;left:0;top:12px;width:10px;height:1px;background:var(--accent-warm);
+  }
+  .timeline-item.leadership .ti-bullets li::before{background:var(--accent-teal)}
+  .num{font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .num.warm{color:var(--accent-deep)}
+
+  .leadership-divider{margin:80px 0 60px;display:flex;align-items:center;gap:24px}
+  .leadership-divider .line{flex:1;height:1px;background:rgba(0,0,0,.12)}
+  .leadership-divider .label{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--accent-teal);font-weight:700;
+  }
+
+  /* Projects */
+  .proj-category{margin-bottom:80px}
+  .proj-category-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:32px;gap:20px;flex-wrap:wrap;
+  }
+  .proj-category-head h2{
+    font-family:'Fraunces',serif;font-weight:400;font-size:44px;line-height:1;letter-spacing:-.01em;
+  }
+  .proj-category-head h2 em{font-style:italic}
+  .proj-category-head h2 em.warm{color:var(--accent-warm)}
+  .proj-category-head h2 em.teal{color:var(--accent-teal)}
+  .proj-category-head h2 em.plum{color:var(--accent-plum)}
+  .proj-category-head .pc-count{
+    font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--ink-mute);
+  }
+  .proj-grid{
+    display:grid;gap:28px;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .proj-card{
+    display:block;
+    background:rgba(255,253,247,.7);
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:14px;overflow:hidden;
+    color:inherit;text-decoration:none;
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .proj-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(80,60,40,.12)}
+  .proj-cover{
+    aspect-ratio:5/3;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;padding:0;
+    background:#f4f1e9;
+  }
+  .proj-cover img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .proj-cover.contain{background:#fff}
+  .proj-cover.contain img{
+    object-fit:contain;padding:24px;
+  }
+  .proj-cover::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.35));
+  }
+  .proj-cover.contain::after{
+    background:linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(0,0,0,.12));
+  }
+  .proj-cover .cv-num{
+    position:absolute;top:14px;left:16px;z-index:2;
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.24em;
+    color:rgba(255,255,255,.96);text-transform:uppercase;
+    text-shadow:0 1px 4px rgba(0,0,0,.4);font-weight:700;
+    pointer-events:none;
+  }
+  .proj-cover.contain .cv-num{
+    color:var(--ink);background:rgba(255,255,255,.9);
+    padding:4px 10px;border-radius:99px;text-shadow:none;
+  }
+  .proj-cover .cv-tag{
+    position:absolute;bottom:14px;right:16px;z-index:2;
+    font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.22em;
+    color:#fff;text-transform:uppercase;font-weight:700;
+    border:1px solid rgba(255,255,255,.6);padding:5px 11px;border-radius:99px;
+    backdrop-filter:blur(4px);
+    background:rgba(0,0,0,.2);
+    display:flex;align-items:center;gap:6px;
+    pointer-events:none;
+  }
+  .proj-cover.contain .cv-tag{
+    color:var(--ink);background:rgba(255,255,255,.95);
+    border-color:rgba(0,0,0,.15);
+  }
+  .proj-cover .cv-tag .arr{font-size:11px}
+  .proj-body{padding:24px 26px 28px}
+  .proj-body h3{
+    font-family:'Fraunces',serif;font-weight:500;font-size:24px;line-height:1.2;margin-bottom:6px;
+  }
+  .proj-body .pb-meta{
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--ink-mute);margin-bottom:14px;
+  }
+  .proj-body p{font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+  .proj-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+
+  /* Contact */
+  .contact-grid{
+    display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    margin-top:40px;
+  }
+  .contact-card{
+    background:rgba(255,253,247,.75);border:1px solid rgba(0,0,0,.06);
+    border-radius:16px;padding:36px 28px 32px;text-align:center;
+    transition:transform .3s ease, box-shadow .3s ease;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;color:inherit;
+    text-decoration:none;
+  }
+  .contact-card::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg, var(--accent-warm), var(--accent-teal));
+    opacity:0;transition:opacity .3s ease;
+  }
+  .contact-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(80,60,40,.12)}
+  .contact-card:hover::before{opacity:1}
+  .contact-icon{
+    width:56px;height:56px;border-radius:50%;
+    background:linear-gradient(135deg, var(--accent-warm), var(--accent-deep));
+    color:#fefcf6;display:flex;align-items:center;justify-content:center;
+    font-size:24px;margin-bottom:18px;
+    box-shadow:0 4px 14px rgba(200,123,86,.35);
+  }
+  .contact-card .cc-label{
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--ink-mute);margin-bottom:10px;
+  }
+  .contact-card .cc-value{
+    font-family:'Fraunces',serif;font-size:18px;font-weight:400;
+    color:var(--ink);word-break:break-word;line-height:1.35;
+  }
+  .contact-card .cc-cta{
+    margin-top:18px;font-family:'Space Mono',monospace;font-size:10px;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--accent-warm);
+    font-weight:700;display:inline-flex;align-items:center;gap:8px;
+  }
+  .contact-foot{
+    margin-top:80px;text-align:center;font-family:'Cormorant Garamond',serif;
+    font-style:italic;color:var(--ink-soft);font-size:22px;
+  }
+  .contact-foot .squiggle{display:inline-block;margin:0 16px;color:var(--accent-warm);font-style:normal}
+
+  /* Footer */
+  footer.site-foot{
+    border-top:1px solid rgba(0,0,0,.08);padding:34px 8vw;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;
+    color:var(--ink-mute);text-transform:uppercase;
+    flex-wrap:wrap;gap:14px;position:relative;z-index:2;
+  }
+  footer.site-foot .heart{color:var(--accent-warm)}
+
+  /* Responsive */
+  @media (max-width: 1180px){
+    .fc.pos-tl, .fc.pos-tr{ top: 12%; }
+    .fc.pos-tl, .fc.pos-bl{ left: 7%; }
+    .fc.pos-tr, .fc.pos-br{ right: 7%; }
+    .fc.pos-bl, .fc.pos-br{ bottom: 14%; }
+  }
+  @media (max-width: 980px){
+    .about-grid{grid-template-columns:1fr;gap:48px}
+    .portrait{max-width:340px;margin:0 auto}
+    .edu-item{grid-template-columns:1fr;gap:8px}
+    .edu-gpa{font-size:24px}
+  }
+  @media (max-width: 760px){
+    .nav{padding:16px 20px;grid-template-columns:auto 1fr auto}
+    .nav-links{gap:12px}
+    .nav-link{font-size:10px;letter-spacing:.16em}
+    .nav-brand{font-size:11px;letter-spacing:.22em}
+    .nav-mark{display:none}
+    .fc{width:96px}
+    .fc-illu{width:78px;height:78px}
+    .fc-label{font-size:9px;letter-spacing:.3em;margin-top:10px}
+    .fc.pos-tl{ top: 12%; left: 6%; }
+    .fc.pos-tr{ top: 12%; right: 6%; }
+    .fc.pos-bl{ bottom: 16%; left: 6%; }
+    .fc.pos-br{ bottom: 16%; right: 6%; }
+    .page{padding:120px 6vw 100px}
+    .timeline{padding-left:36px}
+    .timeline-item::before{left:-31px;width:13px;height:13px}
+    .timeline::before{left:9px}
+    .ti-role{font-size:24px}
+    .hero-title{font-size:clamp(44px,12vw,96px)}
+    .leadership-divider .label{font-size:10px;letter-spacing:.28em}
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.17?deps=react@18.3.1",
+    "htm": "https://esm.sh/htm@3.1.1"
+  }
+}
+</script>
+
+<script type="module">
+import React, { useState, useEffect, useRef, useMemo, Fragment } from "react";
+import { createRoot } from "react-dom/client";
+import { motion, AnimatePresence } from "framer-motion";
+import htm from "htm";
+const html = htm.bind(React.createElement);
+
+/* -------------------------------------------------------------------------- */
+/*  SVG illustrations                                                          */
+/* -------------------------------------------------------------------------- */
+
+function IconNotebook() {
+  return html`<svg viewBox="0 0 130 140" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#a06038"/>
+        <stop offset="1" stop-color="#6a3a1f"/>
+      </linearGradient>
+      <linearGradient id="poltop" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#a6c0b2"/>
+        <stop offset="1" stop-color="#7a9b8a"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="65" cy="135" rx="38" ry="3.5" fill="rgba(0,0,0,0.13)"/>
+    <rect x="20" y="32" width="88" height="100" rx="5" fill="url(#leather)"/>
+    <rect x="20" y="32" width="88" height="100" rx="5" fill="none" stroke="#3a1f0e" stroke-width="0.8" stroke-opacity="0.55"/>
+    <rect x="20" y="32" width="9" height="100" fill="rgba(0,0,0,0.22)"/>
+    <rect x="64" y="32" width="3" height="100" fill="#d6c08a" opacity="0.85"/>
+    <rect x="29" y="34" width="78" height="2.2" fill="#fdfaf3"/>
+    <rect x="29" y="38" width="78" height="1" fill="#e8e0d0"/>
+    <g transform="translate(36 16) rotate(-9)">
+      <rect width="50" height="58" fill="#fdfaf3" stroke="rgba(0,0,0,0.08)" stroke-width="0.8"/>
+      <rect x="3.5" y="3.5" width="43" height="38" fill="url(#poltop)"/>
+      <circle cx="25" cy="22" r="6.5" fill="#7a5a44" opacity="0.7"/>
+      <path d="M14 35 q11 -10 22 0" stroke="#5a4030" stroke-width="1" fill="none" opacity="0.5"/>
+      <path d="M21 -5 L21 8 L17 8 L17 0 L29 0 L29 13 L24 13" stroke="#888" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </svg>`;
+}
+
+function IconPhotos() {
+  return html`<svg viewBox="0 0 150 130" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="ph1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d8a8a"/><stop offset="1" stop-color="#3a6464"/></linearGradient>
+      <linearGradient id="ph2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9926e"/><stop offset="1" stop-color="#a85a3a"/></linearGradient>
+      <linearGradient id="ph3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b89868"/><stop offset="1" stop-color="#8a6840"/></linearGradient>
+    </defs>
+    <ellipse cx="75" cy="125" rx="50" ry="3.5" fill="rgba(0,0,0,0.13)"/>
+    <g transform="translate(18 24) rotate(-14)">
+      <rect width="64" height="76" fill="#fdfaf3" stroke="rgba(0,0,0,0.10)" stroke-width="0.8"/>
+      <rect x="4" y="4" width="56" height="50" fill="url(#ph1)"/>
+      <line x1="10" y1="64" x2="38" y2="64" stroke="#5a4030" stroke-width="0.9" opacity="0.45"/>
+    </g>
+    <g transform="translate(58 30) rotate(8)">
+      <rect width="64" height="76" fill="#fdfaf3" stroke="rgba(0,0,0,0.10)" stroke-width="0.8"/>
+      <rect x="4" y="4" width="56" height="50" fill="url(#ph2)"/>
+      <circle cx="32" cy="29" r="9" fill="#fdfaf3" opacity="0.5"/>
+      <line x1="10" y1="64" x2="42" y2="64" stroke="#5a4030" stroke-width="0.9" opacity="0.45"/>
+    </g>
+    <g transform="translate(38 16) rotate(-3)">
+      <rect width="64" height="76" fill="#fdfaf3" stroke="rgba(0,0,0,0.10)" stroke-width="0.8"/>
+      <rect x="4" y="4" width="56" height="50" fill="url(#ph3)"/>
+      <path d="M12 38 L24 26 L34 36 L48 22 L56 32 L56 52 L4 52 Z" fill="rgba(0,0,0,0.18)"/>
+      <circle cx="44" cy="14" r="4.5" fill="#fdfaf3" opacity="0.85"/>
+      <line x1="10" y1="64" x2="40" y2="64" stroke="#5a4030" stroke-width="0.9" opacity="0.5"/>
+    </g>
+  </svg>`;
+}
+
+function IconEnvelope() {
+  return html`<svg viewBox="0 0 150 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="env" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f0dcb6"/>
+        <stop offset="1" stop-color="#d8be8e"/>
+      </linearGradient>
+      <radialGradient id="wax" cx="0.35" cy="0.35">
+        <stop offset="0" stop-color="#d94545"/>
+        <stop offset="1" stop-color="#7a1a1a"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="75" cy="115" rx="55" ry="3.5" fill="rgba(0,0,0,0.13)"/>
+    <rect x="15" y="25" width="120" height="82" rx="3" fill="url(#env)" stroke="#a08458" stroke-width="0.8" stroke-opacity="0.6"/>
+    <path d="M15 25 L75 70 L135 25" stroke="rgba(0,0,0,0.22)" fill="none" stroke-width="0.8"/>
+    <path d="M15 107 L60 65 M135 107 L90 65" stroke="rgba(0,0,0,0.18)" fill="none" stroke-width="0.8"/>
+    <circle cx="75" cy="68" r="16" fill="url(#wax)"/>
+    <circle cx="75" cy="68" r="16" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+    <text x="75" y="74" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#fdfaf3" font-weight="500">J</text>
+  </svg>`;
+}
+
+function IconCamera() {
+  return html`<svg viewBox="0 0 150 120" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#4a4a4a"/>
+        <stop offset="1" stop-color="#1c1c1c"/>
+      </linearGradient>
+      <radialGradient id="lensglass" cx="0.4" cy="0.35">
+        <stop offset="0" stop-color="#3a6a9a"/>
+        <stop offset="0.65" stop-color="#0a1a2a"/>
+        <stop offset="1" stop-color="#000"/>
+      </radialGradient>
+    </defs>
+    <ellipse cx="75" cy="115" rx="55" ry="3.5" fill="rgba(0,0,0,0.14)"/>
+    <rect x="52" y="14" width="46" height="18" rx="2" fill="#262626"/>
+    <rect x="58" y="20" width="34" height="8" rx="1" fill="#3a3a3a"/>
+    <rect x="14" y="28" width="122" height="82" rx="5" fill="url(#body)"/>
+    <rect x="14" y="44" width="122" height="4" fill="#b0b0b0"/>
+    <circle cx="75" cy="74" r="30" fill="#1a1a1a"/>
+    <circle cx="75" cy="74" r="30" fill="none" stroke="#5a5a5a" stroke-width="2"/>
+    <circle cx="75" cy="74" r="22" fill="url(#lensglass)"/>
+    <ellipse cx="68" cy="68" rx="5" ry="3" fill="rgba(255,255,255,0.35)" transform="rotate(-30 68 68)"/>
+    <circle cx="118" cy="22" r="4" fill="#c44030"/>
+    <rect x="20" y="36" width="14" height="6" fill="#5a5a5a" opacity="0.6"/>
+  </svg>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Floating session card — corners pinned via CSS class                       */
+/* -------------------------------------------------------------------------- */
+
+const SESSIONS = [
+  { key: "about",      label: "About",      hash: "#about",      icon: IconNotebook, posClass: "pos-tl" },
+  { key: "experience", label: "Experience", hash: "#experience", icon: IconPhotos,   posClass: "pos-tr" },
+  { key: "contact",    label: "Contact",    hash: "#contact",    icon: IconEnvelope, posClass: "pos-bl" },
+  { key: "projects",   label: "Projects",   hash: "#projects",   icon: IconCamera,   posClass: "pos-br" },
+];
+
+function SessionCard({ s, onNavigate, idx }) {
+  const Icon = s.icon;
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    let raf, last = performance.now();
+    const loop = (now) => {
+      if (now - last > 50) { setTick(t => (t + 1) % 100000); last = now; }
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  const phase = idx * 1.7;
+  const dx = Math.sin(tick * 0.022 + phase) * 7;
+  const dy = Math.cos(tick * 0.018 + phase) * 6;
+  const dr = Math.sin(tick * 0.013 + phase) * 1.6;
+
+  return html`<motion.button
+    class=${`fc ${s.posClass}`}
+    type="button"
+    initial=${{ opacity: 0, scale: 0.84, x: 0, y: 0, rotate: 0 }}
+    animate=${{ opacity: 1, scale: 1, x: dx, y: dy, rotate: dr }}
+    transition=${{
+      opacity: { duration: .8, delay: .25 + idx * 0.12 },
+      scale:   { type: "spring", stiffness: 140, damping: 16, delay: .25 + idx * 0.12 },
+      x:       { type: "tween", duration: 1.2, ease: "easeInOut" },
+      y:       { type: "tween", duration: 1.2, ease: "easeInOut" },
+      rotate:  { type: "tween", duration: 1.2, ease: "easeInOut" },
+    }}
+    whileHover=${{ scale: 1.06, zIndex: 30 }}
+    onClick=${() => onNavigate(s.hash)}
+    aria-label=${`Open ${s.label}`}
+  >
+    <div class="fc-inner">
+      <div class="fc-illu"><${Icon} /></div>
+      <div class="fc-label">${s.label}</div>
+    </div>
+  </motion.button>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Hero                                                                       */
+/* -------------------------------------------------------------------------- */
+
+function Hero({ onNavigate }) {
+  return html`<section class="hero">
+    <div class="hero-stage">
+      ${SESSIONS.map((s, i) => html`<${SessionCard}
+        key=${s.key} s=${s} idx=${i} onNavigate=${onNavigate}
+      />`)}
+
+      <motion.div
+        class="hero-title-wrap"
+        initial=${{ opacity: 0, y: 24 }}
+        animate=${{ opacity: 1, y: 0 }}
+        transition=${{ duration: 1.1, ease: [.2, .8, .2, 1] }}
+      >
+        <h1 class="hero-title">
+          <span class="first">Jamie</span><span class="last">Min</span>
+        </h1>
+        <span class="hero-sub">
+          Digital Marketer, campaign executor, storyteller, and AI builder.
+        </span>
+      </motion.div>
+    </div>
+  </section>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Page wrap                                                                  */
+/* -------------------------------------------------------------------------- */
+
+function PageWrap({ eyebrow, title, titleEm, titleTone, lede, children, onNavigate }) {
+  const tone = titleTone || "warm";
+  return html`<motion.div
+    class="page"
+    initial=${{ opacity: 0, y: 24 }}
+    animate=${{ opacity: 1, y: 0 }}
+    exit=${{ opacity: 0, y: -16 }}
+    transition=${{ duration: .5, ease: [.2,.8,.2,1] }}
+  >
+    <a class="back-link" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>← back to start</a>
+    <div class="page-header">
+      <div class="page-eyebrow"><span class="line"></span>${eyebrow}</div>
+      <h1 class="page-title">${title} <em class=${tone}>${titleEm}</em></h1>
+      ${lede ? html`<p class="page-lede">${lede}</p>` : null}
+    </div>
+    ${children}
+  </motion.div>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  ABOUT                                                                      */
+/* -------------------------------------------------------------------------- */
+
+function AboutPage({ onNavigate }) {
+  console.log("[DEBUG] AboutPage rendering, route=", typeof window !== "undefined" ? window.location.hash : "?");
+  return html`<div class="page" style=${{ opacity: 1 }}>
+    <a class="back-link" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>← back to start</a>
+    <div class="page-header">
+      <div class="page-eyebrow"><span class="line"></span>01 · About Me</div>
+      <h1 class="page-title">A short <em class="warm">introduction.</em></h1>
+    </div>
+    <div class="about-grid">
+      <div class="portrait">
+        <div class="portrait-frame">
+          <div class="portrait-img">
+            <img src="IMG_1059.jpg" alt="Jamie Min portrait" />
+          </div>
+          <div class="portrait-caption">Los Angeles · 2025</div>
+        </div>
+        <div class="portrait-stamp">
+          <div class="stamp-top">M.S. · 2026</div>
+          <div class="stamp-big">3.85</div>
+          <div class="stamp-bot">GPA · CPP</div>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="about-section">
+          <h3>
+            <span class="h-num">§ 01</span>
+            <span class="h-text">Introduce myself <span class="em">here.</span></span>
+            <span class="h-line"></span>
+          </h3>
+          <p class="about-summary">
+            I'm <strong>Jamie</strong> — a bilingual digital marketer currently finishing my
+            <span class="accent">M.S. in Digital Marketing & Analytics</span> at
+            <strong>California State Polytechnic University, Pomona</strong>
+            (GPA <strong>3.85 / 4.00</strong>; member of the American Marketing Association).
+          </p>
+          <p class="about-summary">
+            With <strong>3+ years</strong> of transnational experience bridging
+            <span class="accent">U.S. and Chinese</span> markets, I translate cultural insight
+            into measurable growth — across retail, technology, and media. I own full-funnel
+            execution from social content and paid acquisition to influencer partnerships,
+            live-stream commerce, and CRM-driven conversion.
+          </p>
+          <p class="about-summary">
+            I love marketing because it's one of the rare crafts that asks for a
+            <span class="accent">copywriter's ear</span> and an
+            <span class="accent">analyst's eye</span> in equal measure — and I'm happiest
+            when the creative idea also moves the metric. I'm energized by clean storytelling,
+            elegant data, and the small details that make a brand feel cared for.
+          </p>
+        </div>
+
+        <div class="about-section">
+          <h3>
+            <span class="h-num">§ 02</span>
+            <span class="h-text">Skills <span class="em">& tools.</span></span>
+            <span class="h-line"></span>
+          </h3>
+          <div class="skills-grid">
+            <div class="skill-block">
+              <div class="sb-cat">Practice 01</div>
+              <h4>Social Media & Content</h4>
+              <div class="skill-tags">
+                <span class="skill-tag hot">Instagram</span>
+                <span class="skill-tag hot">TikTok</span>
+                <span class="skill-tag hot">RedNote</span>
+                <span class="skill-tag">LinkedIn</span>
+                <span class="skill-tag">Threads</span>
+                <span class="skill-tag">YouTube</span>
+                <span class="skill-tag">Facebook</span>
+                <span class="skill-tag">Douyin</span>
+                <span class="skill-tag">Live Streaming</span>
+                <span class="skill-tag">Short-Form Video</span>
+                <span class="skill-tag">Copywriting</span>
+                <span class="skill-tag">Storytelling</span>
+                <span class="skill-tag">Canva</span>
+                <span class="skill-tag">CapCut</span>
+                <span class="skill-tag">Figma</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <div class="sb-cat">Practice 02</div>
+              <h4>Paid Digital & SEO</h4>
+              <div class="skill-tags">
+                <span class="skill-tag hot">SEM</span>
+                <span class="skill-tag hot">SEO</span>
+                <span class="skill-tag">Google Search Console</span>
+                <span class="skill-tag">A/B Testing</span>
+                <span class="skill-tag">HubSpot</span>
+                <span class="skill-tag">Semrush</span>
+                <span class="skill-tag">Moz</span>
+                <span class="skill-tag">Mailchimp</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Budget Allocation</span>
+                <span class="skill-tag">CTR / CPM / CPC / ROAS</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <div class="sb-cat">Practice 03</div>
+              <h4>Influencer, CRM & Leads</h4>
+              <div class="skill-tags">
+                <span class="skill-tag hot">KOL / KOC Outreach</span>
+                <span class="skill-tag">Gifting Programs</span>
+                <span class="skill-tag">Partnership Proposals</span>
+                <span class="skill-tag">Contract Negotiation</span>
+                <span class="skill-tag">Brand Collaborations</span>
+                <span class="skill-tag">Lead Sourcing</span>
+              </div>
+            </div>
+            <div class="skill-block">
+              <div class="sb-cat">Practice 04</div>
+              <h4>Data, Analytics & Tools</h4>
+              <div class="skill-tags">
+                <span class="skill-tag hot">Google Analytics 4</span>
+                <span class="skill-tag hot">Tableau</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">Excel (Pivot, VLOOKUP)</span>
+                <span class="skill-tag">Hootsuite</span>
+                <span class="skill-tag">Wix Analytics</span>
+                <span class="skill-tag">Claude AI</span>
+                <span class="skill-tag hot">English</span>
+                <span class="skill-tag hot">Mandarin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h3>
+            <span class="h-num">§ 03</span>
+            <span class="h-text">Education <span class="em">& honors.</span></span>
+            <span class="h-line"></span>
+          </h3>
+          <div class="education-list">
+            <div class="edu-item">
+              <div class="edu-date">Sep 2024 — Aug 2026</div>
+              <div class="edu-main">
+                <h4>California State Polytechnic University, Pomona</h4>
+                <div class="edu-degree">M.S., Digital Marketing & Analytics</div>
+                <div class="edu-extra">Member · American Marketing Association (AMA)</div>
+              </div>
+              <div class="edu-gpa">3.85<small style=${{ fontSize: "14px", opacity: 0.55 }}> / 4.00</small></div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-date">Sep 2018 — Jun 2022</div>
+              <div class="edu-main">
+                <h4>Nanchang Hangkong University</h4>
+                <div class="edu-degree">B.A., Performing Arts</div>
+                <div class="edu-extra">Jiangxi, China</div>
+              </div>
+              <div class="edu-gpa">3.81<small style=${{ fontSize: "14px", opacity: 0.55 }}> / 4.00</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  EXPERIENCE                                                                 */
+/* -------------------------------------------------------------------------- */
+
+function fmt(parts) {
+  return parts.map((p, i) => {
+    if (typeof p === "string") return p;
+    if (p.n) return html`<span class="num" key=${i}>${p.n}</span>`;
+    if (p.w) return html`<span class="num warm" key=${i}>${p.w}</span>`;
+    return null;
+  });
+}
+
+const EXPERIENCE = [
+  {
+    leadership: false,
+    date: "Mar 2025 — Dec 2025",
+    role: "Brand Marketing & Sales Coordinator",
+    company: "Psytone — DTC Press-On Nail Brand",
+    location: "Los Angeles, CA",
+    bullets: [
+      [
+        "Produced product photography and video content for Psytone's official Instagram (",
+        { w: "16K followers" }, ", ", { w: "120+ posts" },
+        "), coordinating publishing schedules and supporting the brand's organic social presence in the DTC press-on nail category.",
+      ],
+      [
+        { w: "Doubled in-store sales volume" }, " during activation periods by planning and executing seasonal promotional campaigns (holiday discounts, limited-time offers) and serving as primary in-store sales consultant for walk-in customers.",
+      ],
+      [
+        "Initiated outreach to ", { w: "15+ KOL/UGC creators" },
+        " to build a brand collaboration pipeline, while delivering competitive market research that informed merchandising and pricing decisions for seasonal launches.",
+      ],
+    ],
+  },
+  {
+    leadership: false,
+    date: "Sep 2024 — Dec 2024",
+    role: "Digital Marketing Intern",
+    company: "Trauma Resource Institute — Mental Health & Education Nonprofit",
+    location: "Los Angeles, CA",
+    bullets: [
+      [
+        "Designed a content strategy across ", { w: "4 platforms" },
+        " (LinkedIn, Instagram, Facebook, Threads) by analyzing ", { w: "6 months" },
+        " of engagement data and audience segmentation insights, identifying ",
+        { w: "3 high-performing content pillars" }, " that lifted engagement by ",
+        { w: "35%" }, " and click-through rate by ", { w: "28%" }, " month-over-month.",
+      ],
+      [
+        "Produced and edited ", { w: "20+ Instagram posts" },
+        " using Canva, applying SEO-optimized hashtags and copywriting best practices to boost average post reach by ",
+        { w: "45%" }, ".",
+      ],
+    ],
+  },
+  {
+    leadership: false,
+    date: "Jun 2022 — Mar 2023",
+    role: "Marketing & Sales Specialist",
+    company: "Tesla — Automotive / Electric Vehicles",
+    location: "Changsha, China",
+    bullets: [
+      [
+        "Achieved ", { w: "top 10% regional sales ranking" }, " for ",
+        { w: "6 consecutive months" }, " by converting ", { w: "120+ daily customer interactions" },
+        " into closed deals, consistently exceeding store KPI targets.",
+      ],
+      [
+        "Built a RedNote content strategy around EV lifestyle storytelling and product education, achieving ",
+        { w: "50K+ views per post" }, " and ", { w: "3K+ new followers" },
+        " — organic results that outperformed paid placements.",
+      ],
+      [
+        "Planned and executed ", { w: "3–5 integrated campaigns" },
+        " (model launches and seasonal promotions) leveraging competitive social media analysis, driving a ",
+        { w: "30%+ uplift in test-drive leads" }, " and supporting ", { w: "100+ attendee test-drive events" }, ".",
+      ],
+      [
+        "Orchestrated ", { w: "5 weekly TikTok live streams" }, " and managed a CRM pipeline of ",
+        { w: "1K+ leads" }, ", delivering an ", { w: "80% conversion rate" }, " and ",
+        { w: "48% referral purchase rate" }, " through real-time Q&A, promotional offers, and personalized follow-up.",
+      ],
+    ],
+  },
+  {
+    leadership: false,
+    date: "Apr 2022 — Jun 2022",
+    role: "Influencer Marketing & Outreach Intern",
+    company: "SYoung Cosmetics E-commerce Co., Ltd. — Beauty & Personal Care",
+    location: "China",
+    bullets: [
+      [
+        "Segmented ", { w: "500+ KOL/KOC influencers" }, " into ",
+        { w: "4 performance tiers" }, " using Pivot Table analysis on engagement and ROI metrics, guiding a ",
+        { w: "30%+ sales growth boost" }, " through tier-matched paid media campaigns on Douyin and RedNote.",
+      ],
+      [
+        "Built and maintained the influencer CRM database, managing ",
+        { w: "100+ contract negotiations and renewals" },
+        " to support scalable, repeatable partnership pipelines.",
+      ],
+    ],
+  },
+  {
+    leadership: false,
+    date: "Jan 2022 — Apr 2022",
+    role: "Event Marketing & Production Intern",
+    company: "Mango TV+ — Reality Show Production / Media & Entertainment",
+    location: "Changsha, China",
+    bullets: [
+      [
+        "Secured ", { w: "30+ artist confirmations" },
+        " for on-air events by directing market research, leading teleconference interviews, and drafting talent information packets that streamlined producer-side review and approval.",
+      ],
+      [
+        "Managed production logistics for a ", { w: "$5M+ USD flagship reality show" },
+        ", overseeing budgeting, equipment procurement, and coordination of ",
+        { w: "50+ crew members" }, " across ", { w: "10+ production days" }, " to deliver ",
+        { w: "10+ broadcast episodes" }, ".",
+      ],
+    ],
+  },
+];
+
+const LEADERSHIP = [
+  {
+    leadership: true,
+    date: "Sep 2025 — Present",
+    role: "Vice President of Digital Marketing",
+    company: "NCMA San Gabriel Valley Chapter — Professional Association",
+    location: "Los Angeles, CA",
+    bullets: [
+      [
+        "Built and managed the organization's Wix website, increasing site traffic by ",
+        { w: "60%" }, " within ", { w: "3 months" },
+        " by optimizing event pages, SEO keywords, and UX through Wix Analytics.",
+      ],
+      [
+        "Grew Instagram and LinkedIn engagement by ", { w: "45%" }, " within ",
+        { w: "6 months" }, " by producing branded flyers, photography, and video content, and writing campaign copy promoting chapter events.",
+      ],
+    ],
+  },
+];
+
+function TimelineItem({ item, index }) {
+  return html`<motion.div
+    class=${`timeline-item ${item.leadership ? "leadership" : ""}`}
+    initial=${{ opacity: 0, y: 30 }}
+    whileInView=${{ opacity: 1, y: 0 }}
+    viewport=${{ once: true, margin: "-80px" }}
+    transition=${{ duration: .6, delay: 0.05 + (index % 5) * 0.08, ease: [.2,.8,.2,1] }}
+  >
+    <div class="ti-date">${item.date}</div>
+    <div class="ti-role">${item.role}</div>
+    <div class="ti-company">${item.company}</div>
+    <div class="ti-meta">${item.location}</div>
+    <ul class="ti-bullets">
+      ${item.bullets.map((b, i) => html`<li key=${i}>${fmt(b)}</li>`)}
+    </ul>
+  </motion.div>`;
+}
+
+function ExperiencePage({ onNavigate }) {
+  return html`<motion.div
+    class="page"
+    initial=${{ opacity: 0, y: 24 }}
+    animate=${{ opacity: 1, y: 0 }}
+    transition=${{ duration: .5, ease: [.2,.8,.2,1] }}
+  >
+    <a class="back-link" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>← back to start</a>
+    <div class="page-header">
+      <div class="page-eyebrow"><span class="line"></span>02 · Experience</div>
+      <h1 class="page-title">A working <em class="warm">history.</em></h1>
+      <p class="page-lede">Roughly chronological. The dates are accurate; the lessons are still being learned. Numbers in bold are pulled from the work itself — not the brochure.</p>
+    </div>
+    <div class="timeline">
+      ${EXPERIENCE.map((it, i) => html`<${TimelineItem} key=${"e"+i} item=${it} index=${i} />`)}
+    </div>
+
+    <div class="leadership-divider">
+      <span class="line"></span>
+      <span class="label">Leadership · Community</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="timeline">
+      ${LEADERSHIP.map((it, i) => html`<${TimelineItem} key=${"l"+i} item=${it} index=${EXPERIENCE.length + i} />`)}
+    </div>
+  </motion.div>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  PROJECTS                                                                   */
+/* -------------------------------------------------------------------------- */
+
+const PROJECTS = [
+  {
+    category: "Digital Marketing",
+    catEm: "Marketing.",
+    catTone: "warm",
+    items: [
+      {
+        title: "Erewhon",
+        meta: "Premium Retail · Digital Campaign · 2025",
+        cover: "Erewhon.pdf.png",
+        pdf: "Erewhon.pdf",
+        coverFit: "cover",
+        body: "A digital marketing concept built around Erewhon's cult positioning in premium California grocery — pairing influencer-led RedNote and TikTok storytelling with paid acquisition and an editorial content calendar designed to convert lifestyle aspiration into footfall.",
+        tags: ["Brand", "Social", "Content Strategy", "Paid Media"],
+      },
+      {
+        title: "Trauma Resource Institute (TRI)",
+        meta: "Nonprofit · Cross-Platform Strategy · 2024",
+        cover: "TRI_Proposal.pdf.png",
+        pdf: "TRI_Proposal.pdf",
+        coverFit: "cover",
+        body: "Multi-platform content strategy for a mental-health education nonprofit. Audience analysis across LinkedIn, Instagram, Facebook, and Threads identified three content pillars; relaunch lifted engagement 35% and CTR 28% MoM.",
+        tags: ["Strategy", "Nonprofit", "Content Pillars", "SEO Copy"],
+      },
+    ],
+  },
+  {
+    category: "Marketing Clients",
+    catEm: "Clients.",
+    catTone: "teal",
+    items: [
+      {
+        title: "MAS — Marketing Access Scorecard",
+        meta: "Client · Brand & Social · 2025",
+        cover: "mas-logo.png",
+        pdf: "MAS_Presentation.pdf",
+        coverFit: "contain",
+        body: "Full social-channel build-out across LinkedIn, YouTube, and Podcast surfaces — logo system, channel art, episode templates, and a recurring content calendar tuned to long-form audio and short-form clips. Final presentation deck attached.",
+        tags: ["Brand", "Podcast", "Channel Art", "Calendar"],
+      },
+      {
+        title: "NCMA San Gabriel Valley",
+        meta: "Client · Web + Social · 2025",
+        cover: "ncma-logo.png",
+        pdf: "NCMA_Presentation.html",
+        coverFit: "contain",
+        body: "Built and now manages the chapter's Wix website (+60% traffic in three months) plus Instagram and LinkedIn content (+45% engagement in six months) — flyers, photography, video, and event copy as VP of Digital Marketing.",
+        tags: ["Wix", "SEO", "Events", "Social"],
+      },
+    ],
+  },
+  {
+    category: "Marketing Analytics",
+    catEm: "Analytics.",
+    catTone: "plum",
+    items: [
+      {
+        title: "Forecasting Global Temperature & Sea-Level Rise",
+        meta: "Quantitative · Predictive Modeling",
+        cover: "Forecasting_Temperature.pdf.png",
+        pdf: "Forecasting_Temperature.pdf",
+        coverFit: "cover",
+        body: "Time-series forecasting study using R to project global mean temperature anomalies and sea-level rise. Built ARIMA-style baselines against decadal observation data and visualized confidence intervals for non-specialist readers.",
+        tags: ["R", "Forecasting", "Time Series", "Data Viz"],
+      },
+      {
+        title: "Consumers & Promotional Gifts",
+        meta: "Consumer Behavior · Research Paper",
+        cover: "Consumers_Promotional_Gifts.pdf.png",
+        pdf: "Consumers_Promotional_Gifts.pdf",
+        coverFit: "cover",
+        body: "Mixed-methods research on how promotional gifts influence purchase intent and brand recall — survey design, segmentation, and a marketing-implications section translating findings into channel-level recommendations.",
+        tags: ["Research", "Survey", "Segmentation", "Behavior"],
+      },
+    ],
+  },
+];
+
+function ProjectCard({ p, i }) {
+  const coverClass = p.coverFit === "contain" ? "proj-cover contain" : "proj-cover";
+  const handleClick = (e) => {
+    /* Open the PDF — works both as native anchor and explicit window.open
+       fallback (in case the embedded preview blocks target=_blank). */
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const w = window.open(p.pdf, "_blank", "noopener,noreferrer");
+    if (!w) window.location.href = p.pdf;
+  };
+  return html`<motion.a
+    class="proj-card"
+    href=${p.pdf}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick=${handleClick}
+    initial=${{ opacity: 0, y: 24 }}
+    whileInView=${{ opacity: 1, y: 0 }}
+    viewport=${{ once: true, margin: "-60px" }}
+    transition=${{ duration: .55, delay: i * 0.08, ease: [.2,.8,.2,1] }}
+  >
+    <div class=${coverClass}>
+      <img src=${p.cover} alt=${p.title} />
+      <span class="cv-num">0${i+1} · Project</span>
+      <span class="cv-tag">Open File <span class="arr">↗</span></span>
+    </div>
+    <div class="proj-body">
+      <h3>${p.title}</h3>
+      <div class="pb-meta">${p.meta}</div>
+      <p>${p.body}</p>
+      <div class="proj-tags">
+        ${p.tags.map((t,j) => html`<span class="skill-tag" key=${j}>${t}</span>`)}
+      </div>
+    </div>
+  </motion.a>`;
+}
+
+function ProjectsPage({ onNavigate }) {
+  return html`<motion.div
+    class="page"
+    initial=${{ opacity: 0, y: 24 }}
+    animate=${{ opacity: 1, y: 0 }}
+    transition=${{ duration: .5, ease: [.2,.8,.2,1] }}
+  >
+    <a class="back-link" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>← back to start</a>
+    <div class="page-header">
+      <div class="page-eyebrow"><span class="line"></span>03 · Selected Projects</div>
+      <h1 class="page-title">Things I've <em class="warm">made.</em></h1>
+      <p class="page-lede">Grouped by intent — campaigns I built, clients I work with, and the analytical questions I've sat with long enough to write about. Click any card to open the original file.</p>
+    </div>
+    ${PROJECTS.map((cat, ci) => html`<motion.div
+      class="proj-category"
+      key=${ci}
+      initial=${{ opacity: 0, y: 24 }}
+      whileInView=${{ opacity: 1, y: 0 }}
+      viewport=${{ once: true, margin: "-40px" }}
+      transition=${{ duration: .55, ease: [.2,.8,.2,1] }}
+    >
+      <div class="proj-category-head">
+        <h2>0${ci+1} · ${cat.category} <em class=${cat.catTone}>${cat.catEm}</em></h2>
+        <div class="pc-count">${cat.items.length} entries</div>
+      </div>
+      <div class="proj-grid">
+        ${cat.items.map((p, i) => html`<${ProjectCard} key=${i} p=${p} i=${i} />`)}
+      </div>
+    </motion.div>`)}
+  </motion.div>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  CONTACT                                                                    */
+/* -------------------------------------------------------------------------- */
+
+const CONTACTS = [
+  { icon: "✉",  label: "Email",    value: "jianimin@outlook.com",
+    href: "mailto:jianimin@outlook.com",                    cta: "Send a note →" },
+  { icon: "☎",  label: "Phone",    value: "(840) 260-9372",
+    href: "tel:+18402609372",                               cta: "Give a ring →" },
+  { icon: "in", label: "LinkedIn", value: "linkedin.com/in/jamieemin",
+    href: "https://www.linkedin.com/in/jamieemin/",         cta: "Connect →" },
+  { icon: "↓",  label: "Résumé",   value: "Open PDF preview",
+    href: "Jamie_Min_Resume.pdf",                           cta: "View resume →",
+    isPdf: true },
+];
+
+function ContactPage({ onNavigate }) {
+  const handlePdfClick = (e, href) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    const w = window.open(href, "_blank", "noopener,noreferrer");
+    if (!w) window.location.href = href;
+  };
+  return html`<motion.div
+    class="page"
+    initial=${{ opacity: 0, y: 24 }}
+    animate=${{ opacity: 1, y: 0 }}
+    transition=${{ duration: .5, ease: [.2,.8,.2,1] }}
+  >
+    <a class="back-link" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>← back to start</a>
+    <div class="page-header">
+      <div class="page-eyebrow"><span class="line"></span>04 · Contact</div>
+      <h1 class="page-title">Let's get in <em class="rose">touch.</em></h1>
+      <p class="page-lede">Open to full-time digital marketing roles starting 2026, freelance brand and content collaborations, and good conversations. Briefs, coffee chats, and half-formed ideas all welcome.</p>
+    </div>
+    <div class="contact-grid">
+      ${CONTACTS.map((c, i) => html`<motion.a
+        key=${i}
+        class="contact-card"
+        href=${c.href}
+        target=${c.href.startsWith("http") || c.isPdf ? "_blank" : undefined}
+        rel=${c.href.startsWith("http") || c.isPdf ? "noopener noreferrer" : undefined}
+        onClick=${c.isPdf ? (e)=>handlePdfClick(e, c.href) : undefined}
+        initial=${{ opacity: 0, y: 24 }}
+        whileInView=${{ opacity: 1, y: 0 }}
+        viewport=${{ once: true }}
+        transition=${{ duration: .5, delay: i * 0.08 }}
+      >
+        <div class="contact-icon" style=${c.icon === "in" ? { fontFamily: "'Fraunces',serif", fontStyle: "italic", fontWeight: 600 } : {}}>${c.icon}</div>
+        <div class="cc-label">${c.label}</div>
+        <div class="cc-value">${c.value}</div>
+        <div class="cc-cta">${c.cta}</div>
+      </motion.a>`)}
+    </div>
+
+    <div class="contact-foot">
+      <span class="squiggle">✦</span>
+      Based in Los Angeles · happy to work anywhere
+      <span class="squiggle">✦</span>
+    </div>
+  </motion.div>`;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  NAV + APP                                                                  */
+/* -------------------------------------------------------------------------- */
+
+function Nav({ route, onNavigate }) {
+  const links = [
+    { hash:"#about",      label:"About Me"   },
+    { hash:"#experience", label:"Experience" },
+    { hash:"#projects",   label:"Projects"   },
+    { hash:"#contact",    label:"Contact"    },
+  ];
+  return html`<nav class="nav">
+    <a class="nav-brand" href="#" onClick=${(e)=>{e.preventDefault();onNavigate("");}}>
+      Portfolio
+    </a>
+    <div class="nav-links">
+      ${links.map(l => html`<a
+        key=${l.hash}
+        href=${l.hash}
+        class=${`nav-link ${route===l.hash?"active":""}`}
+        onClick=${(e)=>{e.preventDefault();onNavigate(l.hash);}}
+      >${l.label}</a>`)}
+    </div>
+    <div class="nav-right">
+      <span class="nav-mark">Jamie · Min</span>
+    </div>
+  </nav>`;
+}
+
+function App(){
+  const [route, setRoute] = useState(typeof window !== "undefined" ? window.location.hash : "");
+
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash || "");
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  const onNavigate = (hash) => {
+    if (hash === "") {
+      try { history.pushState("", document.title, window.location.pathname + window.location.search); } catch(_){}
+      setRoute("");
+    } else {
+      try { history.pushState(null, "", hash); } catch(_){}
+      setRoute(hash);
+    }
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+
+  let page;
+  if      (route === "#about")      page = html`<${AboutPage}      key="a" onNavigate=${onNavigate} />`;
+  else if (route === "#experience") page = html`<${ExperiencePage} key="e" onNavigate=${onNavigate} />`;
+  else if (route === "#projects")   page = html`<${ProjectsPage}   key="p" onNavigate=${onNavigate} />`;
+  else if (route === "#contact")    page = html`<${ContactPage}    key="c" onNavigate=${onNavigate} />`;
+  else                              page = html`<${Hero}           key="h" onNavigate=${onNavigate} />`;
+
+  return html`<${Fragment}>
+    <${Nav} route=${route} onNavigate=${onNavigate} />
+    ${page}
+    <footer class="site-foot">
+      <span>© Jamie Min · 2026 · Los Angeles</span>
+      <span>Set in <em>Fraunces</em> & Inter <span class="heart">♡</span></span>
+    </footer>
+  <//>`;
+}
+
+createRoot(document.getElementById("root")).render(html`<${App} />`);
+</script>
+</body>
+</html>

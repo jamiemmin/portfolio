@@ -1,0 +1,220 @@
+---
+title: "Jamie Min"
+subtitle: "Digital Marketer, campaign executor, storyteller, and AI builder."
+author: "Jamie Min"
+date: "2026-05-13"
+format:
+  html:
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    toc-title: "On this page"
+    page-layout: article
+    smooth-scroll: true
+    code-tools: false
+    theme:
+      light: [cosmo]
+    css: portfolio-styles.css
+    embed-resources: false
+    anchor-sections: true
+    link-external-newwindow: true
+---
+
+```{=html}
+<style>
+:root { --warm:#c87b56; --teal:#2e5b5b; --plum:#7a4a6a; --ink:#171717; --mute:#7a6a52; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+h1 { font-size: 3.2rem; font-weight: 300; }
+h1 em { color: var(--warm); font-weight: 400; }
+.hero-tag { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--mute); }
+.num { font-weight: 700; color: var(--ink); }
+.num.warm { color: var(--warm); }
+.tagline { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #3a3025; }
+table { font-size: 0.95rem; }
+.skill-tag {
+  display: inline-block; padding: 4px 10px; margin: 2px;
+  background: rgba(200,123,86,.10); color: #a05a3c;
+  border: 1px solid rgba(200,123,86,.25);
+  border-radius: 99px; font-size: 12px;
+}
+</style>
+```
+
+::: {.hero-tag}
+Portfolio · Vol. 2026
+:::
+
+# Jamie *Min*
+
+::: {.tagline}
+Digital Marketer, campaign executor, storyteller, and AI builder.
+:::
+
+Bilingual digital marketer based in Los Angeles. M.S. Digital Marketing & Analytics, Cal Poly Pomona.
+
+---
+
+# About Me {#about}
+
+:::: {.columns}
+
+::: {.column width="36%"}
+![Jamie Min — Los Angeles, 2025](IMG_1059.jpg){fig-alt="Portrait of Jamie Min" width=320px}
+:::
+
+::: {.column width="4%"}
+:::
+
+::: {.column width="60%"}
+
+## Introduce myself *here.*
+
+I'm **Jamie** — a bilingual digital marketer currently finishing my **M.S. in Digital Marketing & Analytics** at *California State Polytechnic University, Pomona* (GPA **3.85 / 4.00**; member of the American Marketing Association).
+
+With **3+ years** of transnational experience bridging *U.S. and Chinese* markets, I translate cultural insight into measurable growth — across retail, technology, and media. I own full-funnel execution from social content and paid acquisition to influencer partnerships, live-stream commerce, and CRM-driven conversion.
+
+I love marketing because it's one of the rare crafts that asks for a *copywriter's ear* and an *analyst's eye* in equal measure — and I'm happiest when the creative idea also moves the metric.
+
+:::
+
+::::
+
+## Skills *& tools.*
+
+**Social Media & Content** &nbsp; [Instagram]{.skill-tag} [TikTok]{.skill-tag} [RedNote]{.skill-tag} [LinkedIn]{.skill-tag} [Threads]{.skill-tag} [YouTube]{.skill-tag} [Douyin]{.skill-tag} [Live Streaming]{.skill-tag} [Short-Form Video]{.skill-tag} [Copywriting]{.skill-tag} [Storytelling]{.skill-tag} [Canva]{.skill-tag} [CapCut]{.skill-tag} [Figma]{.skill-tag}
+
+**Paid Digital & SEO** &nbsp; [SEM]{.skill-tag} [SEO]{.skill-tag} [Google Search Console]{.skill-tag} [A/B Testing]{.skill-tag} [HubSpot]{.skill-tag} [Semrush]{.skill-tag} [Moz]{.skill-tag} [Mailchimp]{.skill-tag} [WordPress]{.skill-tag} [CTR/CPM/CPC/ROAS]{.skill-tag}
+
+**Influencer, CRM & Leads** &nbsp; [KOL/KOC Outreach]{.skill-tag} [Gifting Programs]{.skill-tag} [Partnership Proposals]{.skill-tag} [Contract Negotiation]{.skill-tag} [Brand Collaborations]{.skill-tag} [Lead Sourcing]{.skill-tag}
+
+**Data, Analytics & Tools** &nbsp; [Google Analytics 4]{.skill-tag} [Tableau]{.skill-tag} [R]{.skill-tag} [HTML]{.skill-tag} [Excel (Pivot, VLOOKUP)]{.skill-tag} [Hootsuite]{.skill-tag} [Wix Analytics]{.skill-tag} [Claude AI]{.skill-tag} [English]{.skill-tag} [Mandarin]{.skill-tag}
+
+## Education
+
+| Period | Institution | Degree | GPA |
+|:------|:-----------|:------|:----|
+| **Sep 2024 — Aug 2026** | California State Polytechnic University, Pomona | M.S., Digital Marketing & Analytics | **3.85 / 4.00** |
+| **Sep 2018 — Jun 2022** | Nanchang Hangkong University | B.A., Performing Arts | **3.81 / 4.00** |
+
+: {tbl-colwidths="[22,42,26,10]"}
+
+---
+
+# Experience {#experience}
+
+### Brand Marketing & Sales Coordinator
+**Psytone — DTC Press-On Nail Brand** &nbsp;·&nbsp; *Los Angeles, CA* &nbsp;·&nbsp; **Mar 2025 — Dec 2025**
+
+- Produced product photography and video content for Psytone's official Instagram (**[16K followers]{.num .warm}**, **[120+ posts]{.num .warm}**), coordinating publishing schedules and supporting the brand's organic social presence in the DTC press-on nail category.
+- **[Doubled in-store sales volume]{.num .warm}** during activation periods by planning and executing seasonal promotional campaigns (holiday discounts, limited-time offers) and serving as primary in-store sales consultant for walk-in customers.
+- Initiated outreach to **[15+ KOL/UGC creators]{.num .warm}** to build a brand collaboration pipeline, while delivering competitive market research that informed merchandising and pricing decisions for seasonal launches.
+
+### Digital Marketing Intern
+**Trauma Resource Institute** &nbsp;·&nbsp; *Los Angeles, CA* &nbsp;·&nbsp; **Sep 2024 — Dec 2024**
+
+- Designed a content strategy across **[4 platforms]{.num .warm}** (LinkedIn, Instagram, Facebook, Threads) by analyzing **[6 months]{.num .warm}** of engagement data and audience segmentation insights, identifying **[3 high-performing content pillars]{.num .warm}** that lifted engagement by **[35%]{.num .warm}** and click-through rate by **[28%]{.num .warm}** month-over-month.
+- Produced and edited **[20+ Instagram posts]{.num .warm}** using Canva, applying SEO-optimized hashtags and copywriting best practices to boost average post reach by **[45%]{.num .warm}**.
+
+### Marketing & Sales Specialist
+**Tesla — Automotive / Electric Vehicles** &nbsp;·&nbsp; *Changsha, China* &nbsp;·&nbsp; **Jun 2022 — Mar 2023**
+
+- Achieved **[top 10% regional sales ranking]{.num .warm}** for **[6 consecutive months]{.num .warm}** by converting **[120+ daily customer interactions]{.num .warm}** into closed deals.
+- Built a RedNote content strategy around EV lifestyle storytelling, achieving **[50K+ views per post]{.num .warm}** and **[3K+ new followers]{.num .warm}** — organic results that outperformed paid placements.
+- Planned and executed **[3–5 integrated campaigns]{.num .warm}**, driving a **[30%+ uplift in test-drive leads]{.num .warm}** and supporting **[100+ attendee test-drive events]{.num .warm}**.
+- Orchestrated **[5 weekly TikTok live streams]{.num .warm}** and managed a CRM pipeline of **[1K+ leads]{.num .warm}**, delivering an **[80% conversion rate]{.num .warm}** and **[48% referral purchase rate]{.num .warm}**.
+
+### Influencer Marketing & Outreach Intern
+**SYoung Cosmetics** &nbsp;·&nbsp; *China* &nbsp;·&nbsp; **Apr 2022 — Jun 2022**
+
+- Segmented **[500+ KOL/KOC influencers]{.num .warm}** into **[4 performance tiers]{.num .warm}**, guiding a **[30%+ sales growth boost]{.num .warm}** through tier-matched paid media on Douyin and RedNote.
+- Built and maintained the influencer CRM database, managing **[100+ contract negotiations and renewals]{.num .warm}**.
+
+### Event Marketing & Production Intern
+**Mango TV+** &nbsp;·&nbsp; *Changsha, China* &nbsp;·&nbsp; **Jan 2022 — Apr 2022**
+
+- Secured **[30+ artist confirmations]{.num .warm}** for on-air events through market research and teleconference interviews.
+- Managed production logistics for a **[$5M+ USD flagship reality show]{.num .warm}**, coordinating **[50+ crew members]{.num .warm}** across **[10+ production days]{.num .warm}** to deliver **[10+ broadcast episodes]{.num .warm}**.
+
+## Leadership
+
+### Vice President of Digital Marketing
+**NCMA San Gabriel Valley Chapter** &nbsp;·&nbsp; *Los Angeles, CA* &nbsp;·&nbsp; **Sep 2025 — Present**
+
+- Built and managed the organization's Wix website, increasing site traffic by **[60%]{.num .warm}** within **[3 months]{.num .warm}** through optimized event pages, SEO keywords, and UX.
+- Grew Instagram and LinkedIn engagement by **[45%]{.num .warm}** within **[6 months]{.num .warm}** by producing branded flyers, photography, video, and campaign copy.
+
+---
+
+# Projects {#projects}
+
+::: {.panel-tabset}
+
+## Digital Marketing
+
+### Erewhon — Premium Retail Digital Campaign
+*2025 · Brand · Social · Content Strategy · Paid Media*
+
+A digital marketing concept built around Erewhon's cult positioning in premium California grocery — pairing influencer-led RedNote and TikTok storytelling with paid acquisition and an editorial content calendar designed to convert lifestyle aspiration into footfall.
+
+[**Open file →**](Erewhon.pdf){target="_blank"}
+
+### Trauma Resource Institute (TRI) — Cross-Platform Strategy
+*2024 · Nonprofit · Strategy · SEO Copy*
+
+Multi-platform content strategy for a mental-health education nonprofit. Audience analysis across LinkedIn, Instagram, Facebook, and Threads identified three content pillars; relaunch lifted engagement **35%** and CTR **28%** MoM.
+
+[**Open file →**](TRI_Proposal.pdf){target="_blank"}
+
+## Marketing Clients
+
+### MAS — Marketing Access Scorecard
+*2025 · Brand · Podcast · Channel Art · Calendar*
+
+Full social-channel build-out across LinkedIn, YouTube, and Podcast surfaces — logo system, channel art, episode templates, and a recurring content calendar tuned to long-form audio and short-form clips.
+
+[**Open file →**](MAS_Presentation.pdf){target="_blank"}
+
+### NCMA San Gabriel Valley
+*2025 · Wix · SEO · Events · Social*
+
+Built and now manages the chapter's Wix website (**+60%** traffic in three months) plus Instagram and LinkedIn content (**+45%** engagement in six months) — flyers, photography, video, and event copy as VP of Digital Marketing.
+
+[**Open file →**](NCMA_Presentation.html){target="_blank"}
+
+## Marketing Analytics
+
+### Forecasting Global Temperature & Sea-Level Rise
+*Quantitative · Predictive Modeling · R*
+
+Time-series forecasting study using R to project global mean temperature anomalies and sea-level rise. Built ARIMA-style baselines against decadal observation data and visualized confidence intervals for non-specialist readers.
+
+[**Open file →**](Forecasting_Temperature.pdf){target="_blank"}
+
+### Consumers & Promotional Gifts
+*Consumer Behavior · Research Paper*
+
+Mixed-methods research on how promotional gifts influence purchase intent and brand recall — survey design, segmentation, and a marketing-implications section translating findings into channel-level recommendations.
+
+[**Open file →**](Consumers_Promotional_Gifts.pdf){target="_blank"}
+
+:::
+
+---
+
+# Contact {#contact}
+
+|     | Channel | Link |
+|:---:|:--------|:-----|
+| ✉ | **Email** | [jianimin@outlook.com](mailto:jianimin@outlook.com) |
+| ☎ | **Phone** | (840) 260-9372 |
+| in | **LinkedIn** | [linkedin.com/in/jamieemin](https://www.linkedin.com/in/jamieemin/) |
+| ↓ | **Résumé** | [Jamie_Min_Resume.pdf](Jamie_Min_Resume.pdf) |
+
+: {tbl-colwidths="[6,18,76]"}
+
+*Based in Los Angeles · happy to work anywhere.*
+
+---
+
+*© Jamie Min · 2026 · Set in Fraunces & Inter.*
